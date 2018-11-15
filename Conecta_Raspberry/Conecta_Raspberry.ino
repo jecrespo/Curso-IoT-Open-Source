@@ -34,6 +34,7 @@ void loop()
   if (client.connect(ip_raspberrypi, 80)) {
     Serial.println("connected");
     client.println("GET /prueba.html HTTP/1.1");
+    client.println("Host: miraspberry");
     client.println("Connection: close");
     client.println();
   }

@@ -12,7 +12,7 @@
 #include <PubSubClient.h>
 
 // Update these with values suitable for your network.
-byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0x21 };
+byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xYY };  7/Sustituir YY por número de puesto
 
 IPAddress server(192, 168, 6, 72);
 
@@ -38,7 +38,7 @@ void setup()
   // you will need to increase the value of MQTT_MAX_PACKET_SIZE in
   // PubSubClient.h
 
-  if (client.connect("arduinoClient21", "curso_iot", "raspberry")) {
+  if (client.connect("arduinoClientXX", "curso_iot", "raspberry")) {  //Sustituir XX por número de puesto
     client.publish("outTopic", "hello world");
     client.subscribe("inTopic");
   }

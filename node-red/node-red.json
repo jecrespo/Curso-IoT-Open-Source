@@ -1,0 +1,1475 @@
+[
+    {
+        "id": "16dd348f.f2594b",
+        "type": "tab",
+        "label": "Principal",
+        "disabled": false,
+        "info": "#Flujo principal"
+    },
+    {
+        "id": "5aafcc20.2b1944",
+        "type": "tab",
+        "label": "Dashboard Principal",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cb7e17dd.f3a1e8",
+        "type": "tab",
+        "label": "Dashboard Gráficas",
+        "disabled": false,
+        "info": "Toda la lógica para hacer el **Dashboard**"
+    },
+    {
+        "id": "7362cfa.855473",
+        "type": "tab",
+        "label": "Debug",
+        "disabled": false,
+        "info": "Hacer debug de diversas variables"
+    },
+    {
+        "id": "19bf36dd.e910d9",
+        "type": "subflow",
+        "name": "Subflow 2",
+        "info": "Ejemplo que entra un dato y saca dos",
+        "in": [
+            {
+                "x": 121,
+                "y": 224,
+                "wires": []
+            }
+        ],
+        "out": [
+            {
+                "x": 458,
+                "y": 335,
+                "wires": [
+                    {
+                        "id": "19bf36dd.e910d9",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 459,
+                "y": 131,
+                "wires": [
+                    {
+                        "id": "19bf36dd.e910d9",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "19511945.9ab8d7",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "192.7.0.8",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "beb4d114.5df97",
+        "type": "ui_group",
+        "z": "",
+        "name": "Arduino MQTT demo",
+        "tab": "e78e3383.cf041",
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "9317c821.078318",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e78e3383.cf041",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "87a6b5c3.019628",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Graficas",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "f171ed8e.140c2",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sonda 1",
+        "tab": "87a6b5c3.019628",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b49deb9b.d50248",
+        "type": "MySQLdatabase",
+        "z": "",
+        "host": "192.7.0.4",
+        "port": "3306",
+        "db": "demo-mqtt",
+        "tz": ""
+    },
+    {
+        "id": "484d1a65.316dc4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sonda 2",
+        "tab": "87a6b5c3.019628",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4010bd65.8e36e4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sonda 1",
+        "tab": "e78e3383.cf041",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2add410e.699e8e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sonda 2",
+        "tab": "e78e3383.cf041",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "14a44092.e1d76f",
+        "type": "ui_group",
+        "z": "",
+        "name": "LED",
+        "tab": "e78e3383.cf041",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e954864d.b06f88",
+        "type": "inject",
+        "z": "16dd348f.f2594b",
+        "name": "Temperatura",
+        "topic": "Temperatura",
+        "payload": "25.5",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 288.7500457763672,
+        "y": 824.5833282470703,
+        "wires": [
+            [
+                "2afedaa9.a5f086"
+            ]
+        ]
+    },
+    {
+        "id": "2afedaa9.a5f086",
+        "type": "mqtt out",
+        "z": "16dd348f.f2594b",
+        "name": "",
+        "topic": "Temperatura",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 592.5000457763672,
+        "y": 824.5833282470703,
+        "wires": []
+    },
+    {
+        "id": "6786f49b.3f508c",
+        "type": "debug",
+        "z": "7362cfa.855473",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 510,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a6225f81.3c2f7",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "Hora",
+        "topic": "Hora",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "a7adde0f.7e1ea",
+        "type": "ui_text",
+        "z": "cb7e17dd.f3a1e8",
+        "group": "f171ed8e.140c2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatura Sonda 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "3f05dbb1.9fa624",
+        "type": "mqtt in",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Temperatura Sonda 1",
+        "topic": "Temp_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 181,
+        "y": 89,
+        "wires": [
+            [
+                "a7adde0f.7e1ea",
+                "4a477754.016d88",
+                "ab5b1041.a5ba"
+            ]
+        ]
+    },
+    {
+        "id": "7ce78ce9.406604",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "",
+        "topic": "Temp_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "57fd8f60.e7015",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "",
+        "topic": "reconnect",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 160,
+        "y": 340,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "2c1c34bb.f01dfc",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "",
+        "topic": "Temp_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 150,
+        "y": 160,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "5fe5c9eb.005658",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "",
+        "topic": "Hum_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "b2181db3.cdbca",
+        "type": "mqtt in",
+        "z": "7362cfa.855473",
+        "name": "",
+        "topic": "Hum_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "6786f49b.3f508c"
+            ]
+        ]
+    },
+    {
+        "id": "85fc1c6d.b2013",
+        "type": "mqtt in",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Humedad Sonda 1",
+        "topic": "Hum_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "984de665.496208",
+                "4a477754.016d88",
+                "ab5b1041.a5ba"
+            ]
+        ]
+    },
+    {
+        "id": "accf6d08.87be",
+        "type": "inject",
+        "z": "5aafcc20.2b1944",
+        "name": "Hora",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "7dedb6c7.65d848"
+            ]
+        ]
+    },
+    {
+        "id": "502f2788.1923a8",
+        "type": "ui_text",
+        "z": "5aafcc20.2b1944",
+        "group": "beb4d114.5df97",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "Hora",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 570,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "984de665.496208",
+        "type": "ui_text",
+        "z": "cb7e17dd.f3a1e8",
+        "group": "f171ed8e.140c2",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humedad Sonda 1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2b64536e.0e31dc",
+        "type": "ui_chart",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "",
+        "group": "484d1a65.316dc4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Sonda 2 - 1h",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "695f2e74.ae557",
+        "type": "ui_text",
+        "z": "cb7e17dd.f3a1e8",
+        "group": "484d1a65.316dc4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatura Sonda 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 440,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bfaf8905.d926d8",
+        "type": "mqtt in",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Temperatura Sonda 2",
+        "topic": "Temp_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "2b64536e.0e31dc",
+                "695f2e74.ae557",
+                "7958222f.f7a12c"
+            ]
+        ]
+    },
+    {
+        "id": "6d2c5eed.7e89d",
+        "type": "mqtt in",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Humedad Sonda 2",
+        "topic": "Hum_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "d085b4ee.8dee58",
+                "2b64536e.0e31dc",
+                "7958222f.f7a12c"
+            ]
+        ]
+    },
+    {
+        "id": "d085b4ee.8dee58",
+        "type": "ui_text",
+        "z": "cb7e17dd.f3a1e8",
+        "group": "484d1a65.316dc4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humedad Sonda 2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4a477754.016d88",
+        "type": "ui_chart",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "",
+        "group": "f171ed8e.140c2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Sonda 1 - 1h",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 410,
+        "y": 80,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "47ddf2e4.733cbc",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "UMBRAL",
+        "group": "4010bd65.8e36e4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "UMBRAL",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "26",
+        "x": 340,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "92b2de93.e1c24",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "Umbral sonda 1",
+        "topic": "Umbral_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "47ddf2e4.733cbc"
+            ]
+        ]
+    },
+    {
+        "id": "cfd94cfb.4ead7",
+        "type": "mqtt out",
+        "z": "5aafcc20.2b1944",
+        "name": "Umbral sonda 1",
+        "topic": "Umbral_1",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5b3fd6c8.9648d8",
+        "type": "ui_slider",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "label": "Temperatura",
+        "group": "4010bd65.8e36e4",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "",
+        "min": "10",
+        "max": "40",
+        "step": 1,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "cfd94cfb.4ead7"
+            ]
+        ]
+    },
+    {
+        "id": "7972a553.9f8f9c",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "UMBRAL",
+        "group": "2add410e.699e8e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "UMBRAL",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "26",
+        "x": 340,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8a6152f5.2ced2",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "Umbral sonda 2",
+        "topic": "Umbral_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "7972a553.9f8f9c"
+            ]
+        ]
+    },
+    {
+        "id": "75084f43.7fa31",
+        "type": "mqtt out",
+        "z": "5aafcc20.2b1944",
+        "name": "Umbral sonda 2",
+        "topic": "Umbral_2",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 360,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "84fcdc8.dbdf02",
+        "type": "ui_slider",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "label": "Temperatura",
+        "group": "2add410e.699e8e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "topic": "",
+        "min": "10",
+        "max": "40",
+        "step": 1,
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "75084f43.7fa31"
+            ]
+        ]
+    },
+    {
+        "id": "35eb13d6.3ede9c",
+        "type": "ui_template",
+        "z": "5aafcc20.2b1944",
+        "group": "beb4d114.5df97",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"></div>\n<h3>Demo de Arduino con MQTT</h3>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 140,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab5b1041.a5ba",
+        "type": "ui_chart",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Grafica Sonda 1 24h",
+        "group": "f171ed8e.140c2",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Sonda 1 - 24h",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 440,
+        "y": 120,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "7958222f.f7a12c",
+        "type": "ui_chart",
+        "z": "cb7e17dd.f3a1e8",
+        "name": "Grafica Sonda 2 24h",
+        "group": "484d1a65.316dc4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Sonda 2 - 24h",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d7890a40.0ff758",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Temp_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 130,
+        "y": 340,
+        "wires": [
+            [
+                "a7ad4e2b.f683e"
+            ]
+        ]
+    },
+    {
+        "id": "a7ad4e2b.f683e",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "group": "4010bd65.8e36e4",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "26",
+        "x": 350,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4eb5b6ba.748b38",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Hum_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "3046fe91.be81a2"
+            ]
+        ]
+    },
+    {
+        "id": "3046fe91.be81a2",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "group": "4010bd65.8e36e4",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "90",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "80",
+        "x": 340,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "c423564f.c9c2e8",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Temp_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "42297dc9.772854"
+            ]
+        ]
+    },
+    {
+        "id": "42297dc9.772854",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "group": "2add410e.699e8e",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Temperatura",
+        "label": "ºC",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "26",
+        "x": 350,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b93d4274.24733",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Hum_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 130,
+        "y": 520,
+        "wires": [
+            [
+                "a3b6119b.9901d"
+            ]
+        ]
+    },
+    {
+        "id": "a3b6119b.9901d",
+        "type": "ui_gauge",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "group": "2add410e.699e8e",
+        "order": 2,
+        "width": "3",
+        "height": "3",
+        "gtype": "donut",
+        "title": "Humedad",
+        "label": "%",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "90",
+        "colors": [
+            "#ff0000",
+            "#008000",
+            "#ff0000"
+        ],
+        "seg1": "20",
+        "seg2": "80",
+        "x": 340,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e7c72bc8.b347f8",
+        "type": "mqtt in",
+        "z": "16dd348f.f2594b",
+        "name": "Temperatura Sonda 1",
+        "topic": "Temp_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "7f4becd.c677c14",
+                "6c669a9a.8346d4"
+            ]
+        ]
+    },
+    {
+        "id": "ee9ef39f.c911a",
+        "type": "mqtt in",
+        "z": "16dd348f.f2594b",
+        "name": "Humedad Sonda 1",
+        "topic": "Hum_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "61cdc77e.0febd8"
+            ]
+        ]
+    },
+    {
+        "id": "361e81e3.51146e",
+        "type": "mqtt in",
+        "z": "16dd348f.f2594b",
+        "name": "Temperatura Sonda 2",
+        "topic": "Temp_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "c18ed71c.9b2138",
+                "d449a35e.fa6ca"
+            ]
+        ]
+    },
+    {
+        "id": "9d4ea374.b7bad",
+        "type": "mqtt in",
+        "z": "16dd348f.f2594b",
+        "name": "Humedad Sonda 2",
+        "topic": "Hum_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "e34dafb4.125bb"
+            ]
+        ]
+    },
+    {
+        "id": "61cdc77e.0febd8",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Make query",
+        "func": "var newMsg = { payload: msg.payload };\nnewMsg.topic=\"insert into Humedad (Sonda,Humedad) values (1,\"+newMsg.payload+\")\";\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "1926aa93.c633c5"
+            ]
+        ]
+    },
+    {
+        "id": "c18ed71c.9b2138",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Make query",
+        "func": "var newMsg = { payload: msg.payload };\nnewMsg.topic=\"insert into Temperatura (Sonda,Temperatura) values (2,\"+newMsg.payload+\")\";\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "1926aa93.c633c5"
+            ]
+        ]
+    },
+    {
+        "id": "1926aa93.c633c5",
+        "type": "mysql",
+        "z": "16dd348f.f2594b",
+        "mydb": "b49deb9b.d50248",
+        "name": "",
+        "x": 610,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e34dafb4.125bb",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Make query",
+        "func": "var newMsg = { payload: msg.payload };\nnewMsg.topic=\"insert into Humedad (Sonda,Humedad) values (2,\"+newMsg.payload+\")\";\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 340,
+        "wires": [
+            [
+                "1926aa93.c633c5"
+            ]
+        ]
+    },
+    {
+        "id": "7f4becd.c677c14",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Make query",
+        "func": "var newMsg = { payload: msg.payload };\nnewMsg.topic=\"insert into Temperatura (Sonda,Temperatura) values (1,\"+newMsg.payload+\")\";\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "1926aa93.c633c5"
+            ]
+        ]
+    },
+    {
+        "id": "7dedb6c7.65d848",
+        "type": "moment",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Etc/UTC",
+        "adjAmount": "0",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "DD-MM-YYYY HH:mm:ss",
+        "locale": "POSIX",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Madrid",
+        "x": 380,
+        "y": 40,
+        "wires": [
+            [
+                "502f2788.1923a8",
+                "50beea13.f7dbb4"
+            ]
+        ]
+    },
+    {
+        "id": "50beea13.f7dbb4",
+        "type": "mqtt out",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Hora",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 570,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6c669a9a.8346d4",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Comprueba Umbral Sonda 1",
+        "func": "if (msg.payload > 26) {\n    msg.payload = true;\n}\nelse {\n    msg.payload = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "ffc3bb30.3e7f28"
+            ]
+        ]
+    },
+    {
+        "id": "d449a35e.fa6ca",
+        "type": "function",
+        "z": "16dd348f.f2594b",
+        "name": "Comprueba Umbral Sonda 2",
+        "func": "if (msg.payload > 26) {\n    msg.payload = true;\n}\nelse {\n    msg.payload = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 460,
+        "wires": [
+            [
+                "6e84612e.4377d"
+            ]
+        ]
+    },
+    {
+        "id": "ffc3bb30.3e7f28",
+        "type": "mqtt out",
+        "z": "16dd348f.f2594b",
+        "name": "Alarma Sonda 1",
+        "topic": "Alarma_1",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 660,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6e84612e.4377d",
+        "type": "mqtt out",
+        "z": "16dd348f.f2594b",
+        "name": "Alarma Sonda 2",
+        "topic": "Alarma_2",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 660,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "9516e652.72e128",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Alarma_1",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 140,
+        "y": 620,
+        "wires": [
+            [
+                "67d34329.92021c"
+            ]
+        ]
+    },
+    {
+        "id": "ff47ade.9d5835",
+        "type": "mqtt in",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Alarma_2",
+        "qos": "2",
+        "broker": "19511945.9ab8d7",
+        "x": 140,
+        "y": 680,
+        "wires": [
+            [
+                "c3231cb.230ebe"
+            ]
+        ]
+    },
+    {
+        "id": "a2306180.a6064",
+        "type": "ui_text",
+        "z": "5aafcc20.2b1944",
+        "group": "14a44092.e1d76f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LED 1",
+        "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-left",
+        "x": 510,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "1a6765f1.f2457a",
+        "type": "ui_text",
+        "z": "5aafcc20.2b1944",
+        "group": "14a44092.e1d76f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "LED 2",
+        "format": "<font color={{msg.color}} ><i class=\"fa fa-circle\" style=\"font-size:24px;\"></i></font>",
+        "layout": "row-left",
+        "x": 510,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "67d34329.92021c",
+        "type": "function",
+        "z": "5aafcc20.2b1944",
+        "name": "Color LED 1",
+        "func": "if (msg.payload == 'true'){\n    msg.color = 'red';\n}\nelse{\n    msg.color = 'green';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 620,
+        "wires": [
+            [
+                "a2306180.a6064"
+            ]
+        ]
+    },
+    {
+        "id": "c3231cb.230ebe",
+        "type": "function",
+        "z": "5aafcc20.2b1944",
+        "name": "Color LED 2",
+        "func": "if (msg.payload == 'true'){\n    msg.color = 'red';\n}\nelse{\n    msg.color = 'green';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 680,
+        "wires": [
+            [
+                "1a6765f1.f2457a"
+            ]
+        ]
+    },
+    {
+        "id": "17e103ae.840d9c",
+        "type": "ui_button",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "group": "14a44092.e1d76f",
+        "order": 0,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "color": "",
+        "bgcolor": "{{msg.background}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 130,
+        "y": 740,
+        "wires": [
+            [
+                "275bb50.be46e4c"
+            ]
+        ]
+    },
+    {
+        "id": "275bb50.be46e4c",
+        "type": "function",
+        "z": "5aafcc20.2b1944",
+        "name": "ON-OFF",
+        "func": "var myCount = flow.get(\"estado\")||\"OFF\";\n\nif (myCount == 'ON'){\n    flow.set(\"estado\",\"OFF\");\n    msg.payload = 'OFF';\n    msg.background = 'red';\n}\nelse{\n    flow.set(\"estado\",\"ON\");\n    msg.payload = 'ON';\n    msg.background = 'green';\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 740,
+        "wires": [
+            [
+                "6135627e.db2f5c",
+                "17e103ae.840d9c"
+            ]
+        ]
+    },
+    {
+        "id": "6135627e.db2f5c",
+        "type": "mqtt out",
+        "z": "5aafcc20.2b1944",
+        "name": "",
+        "topic": "Aviso",
+        "qos": "",
+        "retain": "",
+        "broker": "19511945.9ab8d7",
+        "x": 510,
+        "y": 740,
+        "wires": []
+    }
+]

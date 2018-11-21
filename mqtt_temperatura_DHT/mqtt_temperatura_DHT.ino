@@ -32,11 +32,7 @@ void setup()
 
 void loop()
 {
-  if (!client.connected()) {
-    Serial.print("Connecting ...\n");
-    client.connect("arduinoClientXX", "curso_iot", "raspberry");  //Sustituir XX por número de puesto
-  }
-  else {
+  if (client.connected()) {
     // Envio
     float temp = dht.readTemperature();
     float hum = dht.readHumidity();
@@ -46,7 +42,12 @@ void loop()
     client.publish(topicNameT, bufferT);
     dtostrf(hum, 0, 0, bufferH);
     client.publish(topicNameH, bufferH);
+    Serial.println("Temperatura: " + String(bufferT) + " Humedad: " + String(bufferH));
+    // Tiempo entre envios (en ms)
+    delay(5000);
   }
-  // Tiempo entre envios (en ms)
-  delay(5000);
+  else {
+    Serial.print("Connecting ...\n");
+    client.connect("arduinoClientXX", "curso_iot", "raspberry");  //Sustituir XX por número de puesto
+  }
 }

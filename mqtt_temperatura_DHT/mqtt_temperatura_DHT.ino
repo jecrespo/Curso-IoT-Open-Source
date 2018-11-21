@@ -10,10 +10,11 @@
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xYY };  //Sustituir YY por el número de kit
 
 // IP del servidor
-IPAddress mqtt_server(192, 168, x, x); //poner la IP de mosquitto al que conectarse
+IPAddress mqtt_server(192, 168, X, X); //poner la IP de mosquitto al que conectarse
 
 // Topic con el que trabajamos
-const char* topicName = "temperatura";
+const char* topicNameT = "temperaturaXX/temp"; //Sustituir XX por el número de kit
+const char* topicNameH = "temperaturaXX/hum"; //Sustituir XX por el número de kit
 
 DHT dht(DHTPIN, DHTTYPE);
 EthernetClient ethClient;
@@ -33,14 +34,18 @@ void loop()
 {
   if (!client.connected()) {
     Serial.print("Connecting ...\n");
-    client.connect("Arduino Client");
+    client.connect("arduinoClientXX", "curso_iot", "raspberry");  //Sustituir XX por número de puesto
   }
   else {
     // Envio
     float temp = dht.readTemperature();
-    char buffer[10];
-    dtostrf(temp,0, 0, buffer);
-    client.publish(topicName, buffer);
+    float hum = dht.readHumidity();
+    char bufferT[10];
+    char bufferH[10];
+    dtostrf(temp, 0, 0, bufferT); //solo para Arduinos con MCU AVR https://www.microchip.com/webdoc/AVRLibcReferenceManual/group__avr__stdlib_1ga060c998e77fb5fc0d3168b3ce8771d42.html
+    client.publish(topicNameT, bufferT);
+    dtostrf(hum, 0, 0, bufferH);
+    client.publish(topicNameH, bufferH);
   }
   // Tiempo entre envios (en ms)
   delay(5000);

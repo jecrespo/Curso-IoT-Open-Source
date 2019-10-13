@@ -16,10 +16,6 @@ const char * myWriteAPIKey = SECRET_WRITE_APIKEY;
 // Go to the Project Settings (nut icon).
 char auth[] = AUTH_TOKEN;
 
-// Blynk cloud server
-const char* host = "blynk-cloud.com";
-unsigned int port = 8080;
-
 int pinDHT11 = D2;
 SimpleDHT11 dht11(pinDHT11);
 
@@ -59,7 +55,7 @@ void setup() {
 
   tiempo_envio = millis();
 
-  pinMode(D4, OUTPUT);
+  pinMode(D4, OUTPUT);  //BUILTIN LED
   estado_boton = digitalRead(D3);
 }
 
@@ -82,7 +78,11 @@ void loop() {
   if (boton != estado_boton) {
     if (boton == HIGH) {
       Serial.print("Puerta Abierta");
-      grabaEvento();
+      grabaEvento(1);
+    }
+    else {
+      Serial.print("Puerta Cerrada");
+      grabaEvento(0);
     }
     estado_boton = boton;
   }
@@ -122,14 +122,19 @@ void grabaDatos() {
   else {
     Serial.println("Problem updating channel. HTTP error code " + String(x));
   }
+
+  //Mando datos a Blynk
+  Blynk.virtualWrite(V0, temperature);
+  Blynk.virtualWrite(V1, humidity);
 }
 
-void grabaEvento() {
+void grabaEvento(int evento) {
   Serial.println("=================================");
   Serial.println("Mandando Evento...");
 
   // write to the ThingSpeak channel
-  int x = ThingSpeak.writeField(myChannelNumber, 3, 1, myWriteAPIKey);
+  ThingSpeak.setField(3, evento);
+  int x = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
   if (x == 200) {
     Serial.println("Channel update successful.");
   }

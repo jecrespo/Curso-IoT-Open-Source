@@ -1,5 +1,5 @@
 #include "ThingSpeak.h"
-#include "secrets.h"
+#include "secrets2.h"
 #include <ESP8266WiFi.h>
 #include <SimpleDHT.h>
 #include <BlynkSimpleEsp8266.h>

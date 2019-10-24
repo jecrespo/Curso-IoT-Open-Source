@@ -1,6 +1,6 @@
 #include <Ethernet.h>
 #include <SPI.h>
-#include "Timer.h"
+#include "Timer.h"  //Descargar de https://github.com/JChristensen/Timer
 
 #define NUM_ARDUINO X  //Sustituir X por el numero de Arduino correcto
 

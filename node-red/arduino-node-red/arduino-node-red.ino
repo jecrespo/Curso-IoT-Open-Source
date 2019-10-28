@@ -92,7 +92,7 @@ void reconnect() {
   while (!client.connected()) {
     Serial.print("Attempting MQTT connection...");
     // Attempt to connect
-    if (client.connect("arduinoClientYY")) {
+    if (client.connect("arduinoClientYY","curso_iot","password")) {
       Serial.println("connected");
       // Once connected, publish an announcement...
       client.publish("reconnect", "Arduino Connect!!!");

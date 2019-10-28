@@ -12,7 +12,7 @@
 #include <PubSubClient.h>
 
 // Update these with values suitable for your network.
-byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xYY };  7/Sustituir YY por número de puesto
+byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xYY };  //Sustituir YY por número de puesto
 
 IPAddress server(192, 168, 6, 72);
 
